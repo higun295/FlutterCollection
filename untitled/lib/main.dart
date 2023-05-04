@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Color(0xFFe5e5e5),
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
