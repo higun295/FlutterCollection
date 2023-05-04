@@ -14,13 +14,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            CustomContainer(
-
-            )
-          ],
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              CustomContainer(),
+            ],
+          ),
+          top: true,
+          bottom: true,
+          right: true,
+          left: true,
+          maintainBottomViewPadding: true,
         )
       )
     );
