@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/customContainer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            
+            CustomContainer(
+
+            )
           ],
         )
       )
