@@ -5,6 +5,38 @@ class CustomListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ListView(
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'Atualizacao Global',
+                    style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Text(
+                    'Atualizar',
+                    style: TextStyle(fontSize: 18, color: Color(0xFF74aeed))
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  
+                ],
+              ),
+              Text(DateTime.now().toString())
+              // layout
+              // 작은글씨
+            ],
+          ),
+        ),
+        ListTile(title: Text('List2')),
+      ],
+    );
   }
 }

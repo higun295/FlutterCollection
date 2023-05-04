@@ -43,12 +43,12 @@ class CustomContainer extends StatelessWidget {
           ),
         ),
         Positioned(
-          right: 15, top: 185,
+          right: 20, top: 185,
           child: Text(
             "v1.0.0",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: 15,
             ),
           ),
         )
