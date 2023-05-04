@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'customText.dart';
 
 class CustomListView extends StatelessWidget {
   const CustomListView({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class CustomListView extends StatelessWidget {
                   
                 ],
               ),
-              Text(DateTime.now().toString())
+              CustomText()
               // layout
               // 작은글씨
             ],
