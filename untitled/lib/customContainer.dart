@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'customText.dart';
 
 class CustomContainer extends StatelessWidget {
   const CustomContainer({Key? key}) : super(key: key);
@@ -9,12 +10,12 @@ class CustomContainer extends StatelessWidget {
       children: [
         Container(
           width: MediaQuery.of(context).size.width, height: MediaQuery.of(context).size.height * 0.25,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xFF211f4e),
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(70)),
           ),
         ),
-        Positioned(
+        const Positioned(
           left: 200, bottom: 30,
           child: Image(
             image: AssetImage('assets/images/virus.png'),
@@ -22,7 +23,7 @@ class CustomContainer extends StatelessWidget {
             color: Color(0xFF411a76),
           ),
         ),
-        Positioned(
+        const Positioned(
           left: 25, top: 120,
           child: Text(
             "Covid-19 Atualizacao Global",
@@ -32,17 +33,11 @@ class CustomContainer extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
+        const Positioned(
           left: 27, top: 155,
-          child: Text(
-            "Ultima atualizacao: 16 abril, 2020 | 22:07:24",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-            ),
-          ),
+          child: CustomText(isDark: true, fontSize: 18,),
         ),
-        Positioned(
+        const Positioned(
           right: 20, top: 185,
           child: Text(
             "v1.0.0",

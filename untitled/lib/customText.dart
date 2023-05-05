@@ -2,22 +2,29 @@ import 'package:flutter/material.dart';
 import 'extensions/datetimeExtension.dart';
 
 class CustomText extends StatelessWidget {
-  const CustomText({Key? key, required this.isDark, this.fontSize}) : super(key: key);
 
-  final bool isDark;
+  final bool? isDark;
   final double? fontSize;
+  const CustomText({this.isDark, this.fontSize, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text(
+        Text(
           'Ultima atualizacao : ',
           style: TextStyle(
             fontSize: this.fontSize,
+            color: this.isDark == true ? Colors.white : Colors.black
           ),
         ),
-        Text('${DateTime.now().customDateTime()}'),
+        Text(
+          '${DateTime.now().customDateTime()}',
+          style: TextStyle(
+            fontSize: this.fontSize,
+            color: this.isDark == true ? Colors.white : Colors.black
+          ),
+        ),
       ],
     );
   }
