@@ -30,7 +30,7 @@ class CustomListView extends StatelessWidget {
                   
                 ],
               ),
-              CustomText()
+              CustomText(isDark: true,)
               // layout
               // 작은글씨
             ],
