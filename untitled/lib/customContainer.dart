@@ -35,7 +35,7 @@ class CustomContainer extends StatelessWidget {
         ),
         const Positioned(
           left: 27, top: 155,
-          child: CustomText(isDark: true, fontSize: 18,),
+          child: CustomText(isDark: true, fontSize: 18),
         ),
         const Positioned(
           right: 20, top: 185,
