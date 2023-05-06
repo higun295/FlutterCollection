@@ -13,14 +13,37 @@ class CustomItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
-        child: Column(
+      margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+      width: this.deviceWidth * 0.27,
+      height: this.deviceWidth * 0.17,
+      decoration: BoxDecoration(
+        color: Color(0xFFFFFFFF),
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Positioned(
-            child: Text('${this.title}', style: TextStyle(fontWeight: FontWeight.bold),),
+          Container(
+            margin: EdgeInsets.fromLTRB(10, 3, 10, 3),
+            child: Text(
+              '${this.title}',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15
+              ),
+            ),
           ),
-          Positioned(
-            child: Text('${this.count}${this.unit}', style: TextStyle(color: this.fontColor))
+          Container(
+            margin: EdgeInsets.fromLTRB(10, 3, 10, 3),
+            child: Text(
+              '${this.count}${this.unit}',
+              style: TextStyle(
+                color: this.fontColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 25
+              )
+            )
           )
         ],
       )

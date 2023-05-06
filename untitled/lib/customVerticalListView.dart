@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'customText.dart';
-import 'customHorizontalListView.dart';
 import 'customItem.dart';
 
 class CustomListView extends StatelessWidget {
+
   const CustomListView({Key? key}) : super(key: key);
 
   @override
@@ -31,20 +31,23 @@ class CustomListView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
                     title: 'Confirmados',
-                    count: 21,
+                    count: 2.1,
                     unit: 'm',
                     fontColor: Color(0xFF59a0f4),
                   ),
                   CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
                     title: 'Recuperados',
-                    count: 5470,
+                    count: 547.0,
                     unit: 'k',
                     fontColor: Color(0xFF27e128),
                   ),
                   CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
                     title: 'Mortes',
-                    count: 1455,
+                    count: 145.5,
                     unit: 'k',
                     fontColor: Color(0xFFf9487e),
                   ),
@@ -54,18 +57,147 @@ class CustomListView extends StatelessWidget {
             ],
           ),
         ),
-        ListTile(title: Text('List2')),
-        ListTile(title: Text('List3')),
-        ListTile(title: Text('List4')),
-        ListTile(title: Text('List5')),
-        ListTile(title: Text('List6')),
-        ListTile(title: Text('List6')),
-        ListTile(title: Text('List6')),
-        ListTile(title: Text('List6')),
-        ListTile(title: Text('List6')),
-        ListTile(title: Text('List6')),
-        ListTile(title: Text('List6')),
-        ListTile(title: Text('List6')),
+        Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'Atualizacao Global',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Text(
+                      'Atualizar',
+                      style: TextStyle(fontSize: 18, color: Color(0xFF74aeed))
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Confirmados',
+                    count: 2.1,
+                    unit: 'm',
+                    fontColor: Color(0xFF59a0f4),
+                  ),
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Recuperados',
+                    count: 547.0,
+                    unit: 'k',
+                    fontColor: Color(0xFF27e128),
+                  ),
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Mortes',
+                    count: 145.5,
+                    unit: 'k',
+                    fontColor: Color(0xFFf9487e),
+                  ),
+                ],
+              ),
+              CustomText(isDark: false, fontSize: 18)
+            ],
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'Atualizacao Global',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Text(
+                      'Atualizar',
+                      style: TextStyle(fontSize: 18, color: Color(0xFF74aeed))
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Confirmados',
+                    count: 2.1,
+                    unit: 'm',
+                    fontColor: Color(0xFF59a0f4),
+                  ),
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Recuperados',
+                    count: 547.0,
+                    unit: 'k',
+                    fontColor: Color(0xFF27e128),
+                  ),
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Mortes',
+                    count: 145.5,
+                    unit: 'k',
+                    fontColor: Color(0xFFf9487e),
+                  ),
+                ],
+              ),
+              CustomText(isDark: false, fontSize: 18)
+            ],
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'Atualizacao Global',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Text(
+                      'Atualizar',
+                      style: TextStyle(fontSize: 18, color: Color(0xFF74aeed))
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Confirmados',
+                    count: 2.1,
+                    unit: 'm',
+                    fontColor: Color(0xFF59a0f4),
+                  ),
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Recuperados',
+                    count: 547.0,
+                    unit: 'k',
+                    fontColor: Color(0xFF27e128),
+                  ),
+                  CustomItem(
+                    deviceWidth: MediaQuery.of(context).size.width,
+                    title: 'Mortes',
+                    count: 145.5,
+                    unit: 'k',
+                    fontColor: Color(0xFFf9487e),
+                  ),
+                ],
+              ),
+              CustomText(isDark: false, fontSize: 18)
+            ],
+          ),
+        ),
       ],
     );
   }
