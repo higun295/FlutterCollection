@@ -13,8 +13,8 @@ class CustomItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(5, 10, 5, 10),
-      width: this.deviceWidth * 0.27,
+      margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+      width: this.deviceWidth * 0.28,
       height: this.deviceWidth * 0.19,
       decoration: BoxDecoration(
         color: Color(0xFFFFFFFF),
