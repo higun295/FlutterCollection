@@ -1,0 +1,4 @@
+enum GlobalType {
+  global,
+  brazil,
+}

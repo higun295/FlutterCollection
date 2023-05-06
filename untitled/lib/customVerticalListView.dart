@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'customListItem.dart';
+import 'enums/globalEnum.dart';
 
 class CustomListView extends StatelessWidget {
 
@@ -9,8 +10,8 @@ class CustomListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        CustomListItem(),
-        CustomListItem(),
+        CustomListItem(globalType: GlobalType.global),
+        CustomListItem(globalType: GlobalType.brazil),
       ],
     );
   }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'customText.dart';
 import 'customItem.dart';
+import 'enums/globalEnum.dart';
 
 class CustomListItem extends StatelessWidget {
-  const CustomListItem({Key? key}) : super(key: key);
+  final GlobalType globalType;
+
+  const CustomListItem({required GlobalType this.globalType, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
