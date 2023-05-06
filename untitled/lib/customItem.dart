@@ -26,25 +26,31 @@ class CustomItem extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.fromLTRB(10, 3, 10, 3),
-            child: Text(
-              '${this.title}',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                '${this.title}',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16
+                ),
               ),
             ),
           ),
           Container(
             margin: EdgeInsets.fromLTRB(10, 3, 10, 3),
-            child: Text(
-              '${this.count}${this.unit}',
-              style: TextStyle(
-                color: this.fontColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 25
-              )
-            )
-          )
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                '${this.count}${this.unit}',
+                style: TextStyle(
+                  color: this.fontColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25
+                ),
+              ),
+            ),
+          ),
         ],
       )
     );
