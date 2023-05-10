@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:starbucks/Views/Home.dart';
-import 'Views/Home.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'Views/Order.dart';
 import 'Views/Other.dart';
 import 'Views/Pay.dart';
@@ -54,23 +54,28 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: _selectedIndex == 0? Icon(Icons.home_filled, color: Colors.black,) : Icon(Icons.home_outlined, color: Colors.black),
+            icon: SvgPicture.asset('images/home.svg'),
+            activeIcon: SvgPicture.asset('images/home.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
             label: 'home'
           ),
           BottomNavigationBarItem(
-            icon: _selectedIndex == 1? Icon(Icons.search, color: Colors.black,) : Icon(Icons.search_off, color: Colors.black),
+            icon: SvgPicture.asset('images/pay.svg'),
+            activeIcon: SvgPicture.asset('images/pay.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
             label: 'Search'
           ),
           BottomNavigationBarItem(
-              icon: _selectedIndex == 2? Icon(Icons.shopping_bag, color: Colors.black,) : Icon(Icons.shopping_bag_outlined, color: Colors.black),
+              icon: SvgPicture.asset('images/order.svg'),
+              activeIcon: SvgPicture.asset('images/order.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
               label: 'shopping_bag'
           ),
           BottomNavigationBarItem(
-              icon: _selectedIndex == 3? Icon(Icons.movie, color: Colors.black,) : Icon(Icons.movie_outlined, color: Colors.black),
+              icon: SvgPicture.asset('images/shop.svg'),
+              activeIcon: SvgPicture.asset('images/shop.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
               label: 'movie'
           ),
           BottomNavigationBarItem(
-              icon: _selectedIndex == 4? Icon(Icons.person, color: Colors.black,) : Icon(Icons.person_outlined, color: Colors.black),
+              icon: SvgPicture.asset('images/other.svg'),
+              activeIcon: SvgPicture.asset('images/other.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
               label: 'person'
           ),
         ],
