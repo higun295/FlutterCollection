@@ -11,10 +11,6 @@ class CustomListView extends StatelessWidget {
     return ListView(
       children: <Widget>[
         CustomListItem(globalType: GlobalType.global),
-        CustomListItem(globalType: GlobalType.brazil),
-        CustomListItem(globalType: GlobalType.brazil),
-        CustomListItem(globalType: GlobalType.brazil),
-        CustomListItem(globalType: GlobalType.brazil),
       ],
     );
   }
