@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'Views/Home.dart';
+import 'Views/Order.dart';
+import 'Views/Other.dart';
+import 'Views/Pay.dart';
+import 'Views/Shop.dart';
 
 void main() => runApp(MyApp());
 
@@ -6,10 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SliverAppBar with BottomNavigationBar',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: Scaffold(
         body: CustomScrollView(
           slivers: [
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
               expandedHeight: 150,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text('Example App'),
+                title: Text('Starbucks App'),
               ),
             ),
             SliverFillRemaining(
@@ -38,22 +40,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
-  final List<String> _titles = [
-    'Home',
-    'Search',
-    'Favorites',
-    'Notifications',
-    'Profile',
+  final List<Widget> _widgets = [
+    Home(), Pay(), Order(), Shop(), Other(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          _titles[_selectedIndex],
-          style: TextStyle(fontSize: 24),
-        ),
+        child: _widgets[_selectedIndex]
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -61,26 +56,47 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: _onItemTapped,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: SvgPicture.asset('images/home.svg',),
+            activeIcon: SvgPicture.asset(
+              'images/home.svg',
+              colorFilter: const ColorFilter.mode(Color(0xFF348a5f), BlendMode.srcIn),
+            ),
+            label: 'Home'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
+              icon: SvgPicture.asset('images/pay.svg',),
+              activeIcon: SvgPicture.asset(
+                'images/pay.svg',
+                colorFilter: const ColorFilter.mode(Color(0xFF348a5f), BlendMode.srcIn),
+              ),
+              label: 'Pay'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorites',
+              icon: SvgPicture.asset('images/order.svg',),
+              activeIcon: SvgPicture.asset(
+                'images/order.svg',
+                colorFilter: const ColorFilter.mode(Color(0xFF348a5f), BlendMode.srcIn),
+              ),
+              label: 'Order'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notifications',
+              icon: SvgPicture.asset('images/shop.svg',),
+              activeIcon: SvgPicture.asset(
+                'images/shop.svg',
+                colorFilter: const ColorFilter.mode(Color(0xFF348a5f), BlendMode.srcIn),
+              ),
+              label: 'Shop'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+              icon: SvgPicture.asset('images/other.svg',),
+              activeIcon: SvgPicture.asset(
+                'images/other.svg',
+                colorFilter: const ColorFilter.mode(Color(0xFF348a5f), BlendMode.srcIn),
+              ),
+              label: 'Other'
           ),
         ],
+        selectedItemColor: Color(0xFF348a5f),
       ),
     );
   }
