@@ -54,8 +54,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('images/home.svg'),
-            activeIcon: SvgPicture.asset('images/home.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
+            icon: SvgPicture.asset('images/home.svg',),
+            activeIcon: SvgPicture.asset('images/home.svg',colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
             label: 'home'
           ),
           BottomNavigationBarItem(
