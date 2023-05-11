@@ -1,90 +1,86 @@
 import 'package:flutter/material.dart';
-import 'package:starbucks/Views/Home.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'Views/Order.dart';
-import 'Views/Other.dart';
-import 'Views/Pay.dart';
-import 'Views/Shop.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  static const String _title = 'Starbucks Clone';
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: _title,
-      home: MyStatefulWidget(),
+      title: 'SliverAppBar with BottomNavigationBar',
       theme: ThemeData(
-        primaryColor: Colors.white
-      )
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              expandedHeight: 150,
+              pinned: true,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text('Example App'),
+              ),
+            ),
+            SliverFillRemaining(
+              child: MyHomePage(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
   @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  List<Widget> _widgetOptions = [
-    Home(),
-    Pay(),
-    Order(),
-    Shop(),
-    Other(),
+
+  final List<String> _titles = [
+    'Home',
+    'Search',
+    'Favorites',
+    'Notifications',
+    'Profile',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Starbucks'),
-      ),
-
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: Text(
+          _titles[_selectedIndex],
+          style: TextStyle(fontSize: 24),
+        ),
       ),
-
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('images/home.svg',),
-            activeIcon: SvgPicture.asset('images/home.svg',colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
-            label: 'home'
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('images/pay.svg'),
-            activeIcon: SvgPicture.asset('images/pay.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
-            label: 'Search'
+            icon: Icon(Icons.search),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('images/order.svg'),
-              activeIcon: SvgPicture.asset('images/order.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
-              label: 'shopping_bag'
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
           ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('images/shop.svg'),
-              activeIcon: SvgPicture.asset('images/shop.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
-              label: 'movie'
+            icon: Icon(Icons.notifications),
+            label: 'Notifications',
           ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('images/other.svg'),
-              activeIcon: SvgPicture.asset('images/other.svg', colorFilter: const ColorFilter.mode(Color(0xFF00b27a), BlendMode.srcIn),),
-              label: 'person'
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
-        onTap: _onItemTapped,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
       ),
     );
   }
