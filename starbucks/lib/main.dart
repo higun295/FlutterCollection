@@ -15,13 +15,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: CustomScrollView(
           slivers: [
-            SliverAppBar(
-              expandedHeight: 150,
-              pinned: true,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Text('Starbucks App'),
-              ),
-            ),
+            
             SliverFillRemaining(
               child: MyHomePage(),
             ),
