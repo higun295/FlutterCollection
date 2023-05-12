@@ -61,6 +61,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - images/bell.svg
+    - images/cog.svg
     - images/home.svg
     - images/pay.svg
     - images/order.svg

@@ -16,15 +16,16 @@ class _MainPageTemplate extends State<MainPageTemplate> {
 
   final List<Widget> _pages = [
     Home(appBarTitle: 'Home',),
-    Pay(),
-    Order(),
-    Shop(),
-    Other(),
+    Pay(appBarTitle: 'Pay',),
+    Order(appBarTitle: 'Order',),
+    Shop(appBarTitle: 'Starbucks Online Store',),
+    Other(appBarTitle: 'Other',),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
