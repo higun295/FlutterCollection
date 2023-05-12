@@ -5,6 +5,34 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('home입니까?');
+    return const CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          expandedHeight: 150,
+          pinned: true,
+          flexibleSpace: FlexibleSpaceBar(
+            title: Text('Starbucks App'),
+          ),
+        ),
+        SliverFillRemaining(
+          child: Text('home'),
+        ),
+      ],
+    );
+
+    // body: CustomScrollView(
+    //   slivers: [
+    //     SliverAppBar(
+    //       expandedHeight: 150,
+    //       pinned: true,
+    //       flexibleSpace: FlexibleSpaceBar(
+    //         title: Text('Starbucks App'),
+    //       ),
+    //     ),
+    //     SliverFillRemaining(
+    //       child: MyHomePage(),
+    //     ),
+    //   ],
+    // ),
   }
 }
