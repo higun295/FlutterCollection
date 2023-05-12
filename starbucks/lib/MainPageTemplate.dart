@@ -6,28 +6,31 @@ import '../Views/Other.dart';
 import '../Views/Pay.dart';
 import '../Views/Shop.dart';
 
-class SbBottomNavigationBar extends StatefulWidget {
+class MainPageTemplate extends StatefulWidget {
   @override
-  SbPageState createState() => SbPageState();
+  _MainPageTemplate createState() => _MainPageTemplate();
 }
 
-class SbPageState extends State<SbBottomNavigationBar> {
+class _MainPageTemplate extends State<MainPageTemplate> {
   int _selectedIndex = 0;
 
-  final List<Widget> _widgets = [
-    Home(), Pay(), Order(), Shop(), Other(),
+  final List<Widget> _pages = [
+    Home(appBarTitle: 'Home',),
+    Pay(),
+    Order(),
+    Shop(),
+    Other(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: _widgets[_selectedIndex]
-      ),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        selectedItemColor: Color(0xFF348a5f),
         items: [
           BottomNavigationBarItem(
               icon: SvgPicture.asset('images/home.svg',),
@@ -70,7 +73,6 @@ class SbPageState extends State<SbBottomNavigationBar> {
               label: 'Other'
           ),
         ],
-        selectedItemColor: Color(0xFF348a5f),
       ),
     );
   }

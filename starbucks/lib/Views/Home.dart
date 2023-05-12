@@ -1,38 +1,32 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  final String appBarTitle;
+
+  Home({required this.appBarTitle});
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          expandedHeight: 150,
-          pinned: true,
-          flexibleSpace: FlexibleSpaceBar(
-            title: Text('Starbucks App'),
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            title: Text(appBarTitle),
+            floating: true,
           ),
-        ),
-        SliverFillRemaining(
-          child: Text('home'),
-        ),
-      ],
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                // 리스트 아이템들을 반환
+                return ListTile(
+                  title: Text('Search Result $index'),
+                );
+              },
+              childCount: 20,
+            ),
+          ),
+        ],
+      )
     );
-
-    // body: CustomScrollView(
-    //   slivers: [
-    //     SliverAppBar(
-    //       expandedHeight: 150,
-    //       pinned: true,
-    //       flexibleSpace: FlexibleSpaceBar(
-    //         title: Text('Starbucks App'),
-    //       ),
-    //     ),
-    //     SliverFillRemaining(
-    //       child: MyHomePage(),
-    //     ),
-    //   ],
-    // ),
   }
 }
