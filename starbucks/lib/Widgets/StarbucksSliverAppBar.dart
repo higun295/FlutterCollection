@@ -3,8 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class StarbucksSliverAppBar extends StatelessWidget {
   final String appBarTitle;
+  final List<IconButton>? appBarAction;
 
-  const StarbucksSliverAppBar({required this.appBarTitle, Key? key}) : super(key: key);
+  const StarbucksSliverAppBar({
+    required this.appBarTitle,
+    this.appBarAction,
+    Key? key
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
