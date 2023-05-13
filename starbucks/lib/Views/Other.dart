@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:starbucks/Widgets/StarbucksSliverAppBar.dart';
 
 class Other extends StatelessWidget {
@@ -11,7 +12,19 @@ class Other extends StatelessWidget {
     return Scaffold(
         body: CustomScrollView(
           slivers: [
-            StarbucksSliverAppBar(appBarTitle: appBarTitle),
+            StarbucksSliverAppBar(
+              appBarTitle: appBarTitle,
+              appBarActions: [
+                IconButton(
+                  icon: SvgPicture.asset('images/bell.svg'),
+                  onPressed: () { },
+                ),
+                IconButton(
+                  icon: SvgPicture.asset('images/cog.svg'),
+                  onPressed: () { },
+                )
+              ],
+            ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
                     (context, index) {

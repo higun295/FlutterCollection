@@ -10,7 +10,10 @@ class Home extends StatelessWidget {
     return Scaffold(
         body: CustomScrollView(
           slivers: [
-            StarbucksSliverAppBar(appBarTitle: appBarTitle),
+            StarbucksSliverAppBar(
+              appBarTitle: appBarTitle,
+              appBarActions: null,
+            ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
                     (context, index) {

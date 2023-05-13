@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class StarbucksSliverAppBar extends StatelessWidget {
   final String appBarTitle;
-  final List<IconButton>? appBarAction;
+  final List<IconButton>? appBarActions;
 
   const StarbucksSliverAppBar({
     required this.appBarTitle,
-    this.appBarAction,
+    this.appBarActions,
     Key? key
   }) : super(key: key);
 
@@ -32,16 +31,7 @@ class StarbucksSliverAppBar extends StatelessWidget {
         ),
       ),
       backgroundColor: Colors.white,
-      actions: [
-        IconButton(
-          icon: SvgPicture.asset('images/bell.svg'),
-          onPressed: () { },
-        ),
-        IconButton(
-          icon: SvgPicture.asset('images/cog.svg'),
-          onPressed: () { },
-        )
-      ],
+      actions: appBarActions,
     );
   }
 }
