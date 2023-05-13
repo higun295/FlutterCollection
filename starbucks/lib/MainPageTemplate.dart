@@ -15,11 +15,11 @@ class _MainPageTemplate extends State<MainPageTemplate> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    Home(appBarTitle: 'Home',),
-    Pay(appBarTitle: 'Pay',),
-    Order(appBarTitle: 'Order',),
-    Shop(appBarTitle: 'Starbucks Online Store',),
-    Other(appBarTitle: 'Other',),
+    const Home(appBarTitle: 'Home',),
+    const Pay(appBarTitle: 'Pay',),
+    const Order(appBarTitle: 'Order',),
+    const Shop(appBarTitle: 'Starbucks Online Store',),
+    const Other(appBarTitle: 'Other',),
   ];
 
   @override
