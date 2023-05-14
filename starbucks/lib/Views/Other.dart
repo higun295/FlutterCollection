@@ -25,17 +25,34 @@ class Other extends StatelessWidget {
                 )
               ],
             ),
-            SliverList(
+            SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 16,
+                childAspectRatio: 1.0
+              ),
               delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                  // 리스트 아이템들을 반환
-                  return ListTile(
-                    title: Text('Search Result $index'),
+                (BuildContext context, int index) {
+                  return MenuButton(
+                    icon: "",
+                    label: "Pay",
                   );
                 },
-                childCount: 15,
+                childCount: 5,
               ),
-            ),
+            )
+            // SliverList(
+            //   delegate: SliverChildBuilderDelegate(
+            //         (context, index) {
+            //       // 리스트 아이템들을 반환
+            //       return ListTile(
+            //         title: Text('Search Result $index'),
+            //       );
+            //     },
+            //     childCount: 15,
+            //   ),
+            // ),
           ],
         )
     );
