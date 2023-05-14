@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:starbucks/Widgets/MenuView.dart';
 import 'package:starbucks/Widgets/StarbucksSliverAppBar.dart';
+
+import '../Widgets/MenuButton.dart';
 
 class Other extends StatelessWidget {
   final String appBarTitle;
@@ -25,34 +28,40 @@ class Other extends StatelessWidget {
                 )
               ],
             ),
-            SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 16,
-                childAspectRatio: 1.0
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return MenuButton(
-                    icon: "",
-                    label: "Pay",
-                  );
-                },
-                childCount: 5,
-              ),
+            SliverPadding(
+              padding: EdgeInsets.all(16.0),
+              sliver: SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                  childAspectRatio: 1.0,
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return MenuView();
+                  },
+                  childCount: 1
+                ),
+              )
             )
-            // SliverList(
+            // SliverGrid(
+            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //     crossAxisCount: 2,
+            //     mainAxisSpacing: 16,
+            //     crossAxisSpacing: 16,
+            //     childAspectRatio: 1.0
+            //   ),
             //   delegate: SliverChildBuilderDelegate(
-            //         (context, index) {
-            //       // 리스트 아이템들을 반환
-            //       return ListTile(
-            //         title: Text('Search Result $index'),
+            //     (BuildContext context, int index) {
+            //       return MenuButton(
+            //         icon: "images/bell.svg",
+            //         label: "Pay",
             //       );
             //     },
             //     childCount: 15,
             //   ),
-            // ),
+            // )
           ],
         )
     );
