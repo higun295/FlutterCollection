@@ -14,7 +14,7 @@ class Other extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: CustomScrollView(
-          slivers: [
+          slivers: <Widget>[
             StarbucksSliverAppBar(
               appBarTitle: appBarTitle,
               appBarActions: [
@@ -27,6 +27,24 @@ class Other extends StatelessWidget {
                   onPressed: () { },
                 )
               ],
+            ),
+            SliverToBoxAdapter(
+              child: Table(
+                children: [
+                  TableRow(
+                    children: [
+                      MenuButton(icon: 'images/bell.svg', label: '쿠폰등록'),
+                      MenuButton(icon: 'images/bell.svg', label: '쿠폰등록'),
+                    ],
+                  ),
+                  TableRow(
+                    children: [
+                      MenuButton(icon: 'images/bell.svg', label: '쿠폰 히스토리'),
+                      MenuButton(icon: 'images/bell.svg', label: '쿠폰등록'),
+                    ],
+                  ),
+                ],
+              ),
             ),
             SliverPadding(
               padding: EdgeInsets.all(16.0),
