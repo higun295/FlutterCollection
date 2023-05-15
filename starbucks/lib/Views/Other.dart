@@ -32,16 +32,16 @@ class Other extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               sliver: SliverGrid(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
-                  childAspectRatio: 1.0,
+                  crossAxisCount: 1,
+                  mainAxisSpacing: 5,
+                  crossAxisSpacing: 5,
+                  childAspectRatio: 3.0,
                 ),
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
                     return MenuView();
                   },
-                  childCount: 1
+                  childCount: 5
                 ),
               )
             )

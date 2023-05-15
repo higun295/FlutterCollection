@@ -8,7 +8,6 @@ class MenuView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Table(
       defaultColumnWidth: FixedColumnWidth(MediaQuery.of(context).size.width * 0.4),
-      border: TableBorder.all(),
       children: [
         TableRow(
           children: [
