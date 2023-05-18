@@ -31,7 +31,7 @@ class _MainPageTemplate extends State<MainPageTemplate> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Color(0xFF348a5f),
+        selectedItemColor: const Color(0xFF348a5f),
         items: [
           BottomNavigationBarItem(
               icon: SvgPicture.asset('images/home.svg',),
