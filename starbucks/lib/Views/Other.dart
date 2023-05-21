@@ -34,6 +34,13 @@ class Other extends StatelessWidget {
               children: [
                 TableRow(
                   children: [
+                    TableCell(child: MenuGrid(icon: 'images/star-history.svg', label: '별 히스토리'),),
+                    TableCell(child: Container(),),
+                    TableCell(child: Container(),),
+                  ],
+                ),
+                TableRow(
+                  children: [
                     MenuGrid(icon: 'images/star-history.svg', label: '별 히스토리'),
                     MenuGrid(icon: 'images/receipt.svg', label: '전자영수증'),
                     MenuGrid(icon: 'images/my-menu.svg', label: '나만의 메뉴'),
@@ -62,7 +69,7 @@ class Other extends StatelessWidget {
                 (BuildContext context, int index) {
                   return MenuView();
                 },
-                childCount: 5
+                childCount: 1
               ),
             )
           )
