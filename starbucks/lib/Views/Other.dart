@@ -34,14 +34,16 @@ class Other extends StatelessWidget {
               children: [
                 TableRow(
                   children: [
-                    MenuGrid(icon: 'images/bell.svg', label: '쿠폰1등록'),
-                    MenuButton(icon: 'images/bell.svg', label: '쿠폰2등록'),
+                    MenuGrid(icon: 'images/star-history.svg', label: '별 히스토리'),
+                    MenuGrid(icon: 'images/receipt.svg', label: '전자영수증'),
+                    MenuGrid(icon: 'images/my-menu.svg', label: '나만의 메뉴'),
                   ],
                 ),
                 TableRow(
                   children: [
-                    MenuButton(icon: 'images/bell.svg', label: '쿠폰3히스토리'),
-                    MenuButton(icon: 'images/bell.svg', label: '쿠폰4등록'),
+                    MenuGrid(icon: 'images/lock.svg', label: '개인정보 관리'),
+                    MenuGrid(icon: 'images/account.svg', label: '계정정보'),
+                    MenuGrid(icon: 'images/star-history.svg', label: '전자영수증'),
                   ],
                 ),
               ],

@@ -19,17 +19,19 @@ class MenuGrid extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: Color(0xFFFFFFFF),
           borderRadius: BorderRadius.circular(10.0)
         ),
         child: Column(
           children: [
-            SvgPicture.asset(icon, width:48, height: 48,),
+            SvgPicture.asset(
+              icon, width:35, height: 35,
+              colorFilter: ColorFilter.mode(Color(0xFF348a5f), BlendMode.srcIn),
+            ),
             Text(
               label,
               style: TextStyle(
                 fontSize: 16,
-                fontWeight: FontWeight.bold
               ),)
           ],
         ),
