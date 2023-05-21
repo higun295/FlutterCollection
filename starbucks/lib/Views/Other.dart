@@ -33,14 +33,14 @@ class Other extends StatelessWidget {
               children: [
                 TableRow(
                   children: [
-                    MenuButton(icon: 'images/bell.svg', label: '쿠폰등록'),
-                    MenuButton(icon: 'images/bell.svg', label: '쿠폰등록'),
+                    MenuButton(icon: 'images/bell.svg', label: '쿠폰1등록'),
+                    MenuButton(icon: 'images/bell.svg', label: '쿠폰2등록'),
                   ],
                 ),
                 TableRow(
                   children: [
-                    MenuButton(icon: 'images/bell.svg', label: '쿠폰 히스토리'),
-                    MenuButton(icon: 'images/bell.svg', label: '쿠폰등록'),
+                    MenuButton(icon: 'images/bell.svg', label: '쿠폰3히스토리'),
+                    MenuButton(icon: 'images/bell.svg', label: '쿠폰4등록'),
                   ],
                 ),
               ],
