@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:starbucks/Widgets/MenuGrid.dart';
 import 'package:starbucks/Widgets/MenuView.dart';
 import 'package:starbucks/Widgets/StarbucksSliverAppBar.dart';
 
@@ -33,7 +34,7 @@ class Other extends StatelessWidget {
               children: [
                 TableRow(
                   children: [
-                    MenuButton(icon: 'images/bell.svg', label: '쿠폰1등록'),
+                    MenuGrid(icon: 'images/bell.svg', label: '쿠폰1등록'),
                     MenuButton(icon: 'images/bell.svg', label: '쿠폰2등록'),
                   ],
                 ),
