@@ -4,19 +4,19 @@ import 'package:flutter_svg/svg.dart';
 class MenuGridCell extends StatelessWidget {
   final String icon;
   final String label;
+  final Function onTap;
 
   const MenuGridCell({
     Key? key,
     required this.icon,
     required this.label,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        // 메뉴 클릭 시 이벤트 처리
-      },
+      onTap: onTap(),
       child: Container(
         decoration: BoxDecoration(
           color: Color(0xFFFFFFFF),

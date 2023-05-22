@@ -29,14 +29,96 @@ class Other extends StatelessWidget {
               )
             ],
           ),
-          SliverToBoxAdapter(
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-              itemCount: 9,
-              itemBuilder: (BuildContext context, int index) {
-                return MenuGridCell(icon: 'images/star-history.svg', label: '별 히스토리');
+          SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                if (index == 0) {
+                  return MenuGridCell(
+                    icon: 'images/star-history.svg',
+                    label: '별 히스토리',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
+                if (index == 1) {
+                  return MenuGridCell(
+                    icon: 'images/receipt.svg',
+                    label: '전자영수증',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
+                if (index == 2) {
+                  return MenuGridCell(
+                    icon: 'images/star-history.svg',
+                    label: '별 히스토리',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
+                if (index == 3) {
+                  return MenuGridCell(
+                    icon: 'images/star-history.svg',
+                    label: '별 히스토리',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
+                if (index == 4) {
+                  return MenuGridCell(
+                    icon: 'images/star-history.svg',
+                    label: '별 히스토리',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
+                if (index == 5) {
+                  return MenuGridCell(
+                    icon: 'images/star-history.svg',
+                    label: '별 히스토리',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
+                if (index == 6) {
+                  return MenuGridCell(
+                    icon: 'images/star-history.svg',
+                    label: '별 히스토리',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
+                if (index == 7) {
+                  return MenuGridCell(
+                    icon: 'images/star-history.svg',
+                    label: '별 히스토리',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
               },
-            )
+              childCount: 9,
+            ),
+          ),
+          // SliverToBoxAdapter(
+            // child: GridView.builder(
+            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            //   itemCount: 9,
+            //   itemBuilder: (BuildContext context, int index) {
+            //     return MenuGridCell(icon: 'images/star-history.svg', label: '별 히스토리');
+            //   },
+            // )
             // child: GridView.count(
             //   crossAxisCount: 3,
             //   children: <Widget>[
@@ -46,28 +128,28 @@ class Other extends StatelessWidget {
             //   children: [
             //     TableRow(
             //       children: [
-            //         TableCell(child: MenuGrid(icon: 'images/star-history.svg', label: '별 히스토리'),),
+            //         TableCell(child: MenuGridCell(icon: 'images/star-history.svg', label: '별 히스토리'),),
             //         TableCell(child: Container(),),
             //         TableCell(child: Container(),),
             //       ],
             //     ),
             //     TableRow(
             //       children: [
-            //         MenuGrid(icon: 'images/star-history.svg', label: '별 히스토리'),
-            //         MenuGrid(icon: 'images/receipt.svg', label: '전자영수증'),
-            //         MenuGrid(icon: 'images/my-menu.svg', label: '나만의 메뉴'),
+            //       MenuGridCell(icon: 'images/star-history.svg', label: '별 히스토리'),
+            //       MenuGridCell(icon: 'images/receipt.svg', label: '전자영수증'),
+            //       MenuGridCell(icon: 'images/my-menu.svg', label: '나만의 메뉴'),
             //       ],
             //     ),
             //     TableRow(
             //       children: [
-            //         MenuGrid(icon: 'images/lock.svg', label: '개인정보 관리'),
-            //         MenuGrid(icon: 'images/account.svg', label: '계정정보'),
-            //         MenuGrid(icon: 'images/star-history.svg', label: '전자영수증'),
+            //       MenuGridCell(icon: 'images/lock.svg', label: '개인정보 관리'),
+            //       MenuGridCell(icon: 'images/account.svg', label: '계정정보'),
+            //       MenuGridCell(icon: 'images/star-history.svg', label: '전자영수증'),
             //       ],
             //     ),
             //   ],
             // ),
-          ),
+          // ),
           SliverPadding(
             padding: EdgeInsets.all(16.0),
             sliver: SliverGrid(
