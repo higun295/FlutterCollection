@@ -4,8 +4,6 @@ import 'package:starbucks/Widgets/MenuGridCell.dart';
 import 'package:starbucks/Widgets/MenuView.dart';
 import 'package:starbucks/Widgets/StarbucksSliverAppBar.dart';
 
-import '../Widgets/MenuButton.dart';
-
 class Other extends StatelessWidget {
   final String appBarTitle;
 
@@ -29,13 +27,28 @@ class Other extends StatelessWidget {
               )
             ],
           ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                if(index == 0) {
+                  return MenuGridCell(
+                    icon: 'images/star-history.svg',
+                    label: '별 히스토리',
+                    onTap: () {
+                      print('버튼 1 탭');
+                    },
+                  );
+                }
+              }
+            ),
+          ),
           SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                if (index < 3) {
+                if (index == 0) {
                   return MenuGridCell(
                     icon: 'images/star-history.svg',
                     label: '별 히스토리',
@@ -44,16 +57,7 @@ class Other extends StatelessWidget {
                     },
                   );
                 }
-                if (index == 3) {
-                  return MenuGridCell(
-                    icon: 'images/star-history.svg',
-                    label: '별 히스토리',
-                    onTap: () {
-                      print('버튼 1 탭');
-                    },
-                  );
-                }
-                if (index == 4) {
+                if (index == 1) {
                   return MenuGridCell(
                     icon: 'images/receipt.svg',
                     label: '전자영수증',
@@ -62,7 +66,7 @@ class Other extends StatelessWidget {
                     },
                   );
                 }
-                if (index == 5) {
+                if (index == 2) {
                   return MenuGridCell(
                     icon: 'images/my-menu.svg',
                     label: '나만의 메뉴',
@@ -71,7 +75,7 @@ class Other extends StatelessWidget {
                     },
                   );
                 }
-                if (index == 6) {
+                if (index == 3) {
                   return MenuGridCell(
                     icon: 'images/lock.svg',
                     label: '개인정보 관리',
@@ -80,7 +84,7 @@ class Other extends StatelessWidget {
                     },
                   );
                 }
-                if (index == 7) {
+                if (index == 4) {
                   return MenuGridCell(
                     icon: 'images/account.svg',
                     label: '계정정보',
@@ -103,10 +107,24 @@ class Other extends StatelessWidget {
                 childAspectRatio: 3.0,
               ),
               delegate: SliverChildBuilderDelegate(
+                childCount: 5,
                 (BuildContext context, int index) {
-                  return MenuView();
+                  if(index == 0) {
+                    return MenuView(title: 'Pay',);
+                  }
+                  if(index == 1) {
+                    return MenuView(title: 'Order',);
+                  }
+                  if(index == 2) {
+                    return MenuView(title: 'Shop',);
+                  }
+                  if(index == 3) {
+                    return MenuView(title: 'Delivers',);
+                  }
+                  if(index == 4) {
+                    return MenuView(title: '고객지원',);
+                  }
                 },
-                childCount: 3
               ),
             )
           )
