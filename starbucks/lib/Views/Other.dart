@@ -106,7 +106,7 @@ class Other extends StatelessWidget {
                 (BuildContext context, int index) {
                   return MenuView();
                 },
-                childCount: 1
+                childCount: 3
               ),
             )
           )
