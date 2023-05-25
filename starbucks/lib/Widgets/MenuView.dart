@@ -10,7 +10,7 @@ class MenuView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(title,),
+        Text(title),
         GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
