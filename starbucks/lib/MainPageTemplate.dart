@@ -24,6 +24,7 @@ class _MainPageTemplate extends State<MainPageTemplate> {
 
   @override
   Widget build(BuildContext context) {
+    mounted
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: _pages[_selectedIndex],
