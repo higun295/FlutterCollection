@@ -1,0 +1,104 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255)
+        ),
+        body: Container(
+          margin: const EdgeInsets.all(10),
+          child: const Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'FlutterBoot Plus',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 10
+                )
+              ),
+              Spacer(flex: 1),
+              Column(
+                children: [
+                  CustomRow(
+                    '번개', 
+                    'Premium features',
+                    'Plus subscribers have access to FlutterBoot+ and out lates beta features.'
+                  ),
+                  CustomRow(
+                    '불',
+                    'Priority access',
+                    'You\'ll be able to use FlutterBoot+ even when demand is high'
+                  ),
+                  CustomRow(
+                    '계기',
+                    'Ultra-fase',
+                    'Enjoy even faster response speeds when using FlutterBoot'
+                  ),
+                ]
+              ),
+              Spacer(flex: 25),
+              Text(
+                'Restore Subscription',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12
+                )
+              ),
+              Spacer(flex: 1),
+              Column(
+                children: [
+                  Text(
+                    'Auto-renews for \$25/month until canceled',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 13
+                    )
+                  ),
+                  ElevatedButton(
+                    onPressed: null,
+                    child: Text('Subscribe'),
+                  )
+                ]
+              )
+            ]
+          )
+        )
+      ),
+    );
+  }
+}
+
+
+class CustomRow extends StatelessWidget {
+  const CustomRow({Key? key, required this.image, required this.title, required this.content}) : super(key: key);
+  
+  final image;
+  final title;
+  final content;
+  
+  @override
+  Widget build(BuildContext context){
+    return const Row(
+      children: [
+        Text(image),
+        Column(
+          children: [
+            Text('제목'),
+            Text('내용')
+          ]
+        )
+      ]
+    );
+  }
+}
