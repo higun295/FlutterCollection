@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,10 +32,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  double _progressValue = 0.0;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      _progressValue += 0.1;
     });
   }
 
@@ -42,7 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const SizedBox(height: 50),
             const Text(
@@ -62,28 +65,38 @@ class _MyHomePageState extends State<MyHomePage> {
             const Expanded(
               child: SizedBox(),
             ),
-            Container(
-              margin: const EdgeInsets.all(15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(25),
-                        topRight: Radius.circular(25)
-                      ),
-                      color: Colors.black.withOpacity(0.9)
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
+                child: Container(
+                  width: 50,
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20)
                     ),
+                    color: Colors.black,
+
                   ),
-                  const SizedBox(height: 10),
-                  FloatingActionButton(
-                    onPressed: _incrementCounter,
-                    tooltip: 'Increment',
-                    child: const Icon(Icons.add),
-                  )
-                ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 15, 15),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Column(
+                  children: [
+                    FloatingActionButton(
+                      onPressed: _incrementCounter,
+                      tooltip: 'Increment',
+                      child: const Icon(Icons.add),
+                    )
+                  ],
+                )
               )
             ),
           ],
