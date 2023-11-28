@@ -87,7 +87,7 @@ class MyApp extends StatelessWidget {
                 const SizedBox(height: 24),
                 _buildAdCard(
                   iconData: Icons.speed,
-                  title: 'Ultra-fase',
+                  title: 'Ultra-fast',
                   content: 'Enjoy even faster response speeds when using FlutterBoot',
                 ),
                 const Expanded(child: SizedBox()),
@@ -107,54 +107,32 @@ class MyApp extends StatelessWidget {
                     'Auto-renews for \$25/month until canceled',
                     style: TextStyle(
                       color: Colors.black.withOpacity(0.6),
-                      fontSize: 16
+                      fontSize: 17
                     ),
                   )
                 ),
-                const Center(
-                  child: TextButton(
-                    onPressed: null,
-                    child: Text('Subscribe'),
+                const SizedBox(height: 4),
+                Container(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(300)
+                    ),
+                    color: Colors.black
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  alignment: Alignment.center,
+                  child: const Text(
+                    'Subscribe',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white
+                    )
                   ),
                 )
               ]
             )
           )
       ),
-    );
-  }
-}
-
-class CustomRow extends StatelessWidget {
-  final String icon;
-  final String title;
-  final String content;
-
-  const CustomRow({
-    Key? key,
-    required this.icon,
-    required this.title,
-    required this.content
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text('아이콘'),
-        Column(
-          children: [
-            Text(
-              title,
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(content)
-          ],
-        )
-      ],
     );
   }
 }
