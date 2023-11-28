@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     required String content
   }){
    return Row(
-     crossAxisAlignment: CrossAxisAlignment.start,
+     crossAxisAlignment: CrossAxisAlignment.center,
      children: [
        Icon(
          iconData,
@@ -34,7 +36,11 @@ class MyApp extends StatelessWidget {
              ),
              const SizedBox(height: 2),
              Text(
-                 content
+               content,
+               style: TextStyle(
+                 fontSize: 14,
+                 color: Colors.black.withOpacity(0.6)
+               ),
              )
            ],
          )
@@ -57,40 +63,61 @@ class MyApp extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'FlutterBoot Plus',
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'FlutterBoot Plus',
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                const SizedBox(height: 24),
+                _buildAdCard(
+                    iconData: Icons.bolt,
+                    title: 'Premium features',
+                    content: 'Plus subscribers have access to FlutterBoot+ and out latest beta features.'
+                ),
+                const SizedBox(height: 24),
+                _buildAdCard(
+                    iconData: Icons.whatshot,
+                    title: 'Priority access',
+                    content: 'You\'ll be able to use FlutterBoot+ even when demand is high',
+                ),
+                const SizedBox(height: 24),
+                _buildAdCard(
+                  iconData: Icons.speed,
+                  title: 'Ultra-fase',
+                  content: 'Enjoy even faster response speeds when using FlutterBoot',
+                ),
+                const Expanded(child: SizedBox()),
+                Center(
+                  child: Text(
+                    'Restore subscription',
                     style: TextStyle(
-                      fontSize: 36,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15,
+                      color: Colors.black.withOpacity(0.8)
                     ),
                   ),
-                  const SizedBox(height: 24),
-                  _buildAdCard(
-                      iconData: Icons.bolt,
-                      title: 'Premium features',
-                      content: 'Plus subscribers have access to FlutterBoot+ and out latest beta features.'
+                ),
+                const SizedBox(height: 24),
+                Center(
+                  child: Text(
+                    'Auto-renews for \$25/month until canceled',
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.6),
+                      fontSize: 16
+                    ),
+                  )
+                ),
+                const Center(
+                  child: TextButton(
+                    onPressed: null,
+                    child: Text('Subscribe'),
                   ),
-                  const SizedBox(height: 24),
-                  _buildAdCard(
-                      iconData: Icons.whatshot,
-                      title: 'Priority access',
-                      content: 'You\'ll be able to use FlutterBoot+ even when demand is high',
-                  ),
-                  const SizedBox(height: 24),
-                  _buildAdCard(
-                    iconData: Icons.speed,
-                    title: 'Ultra-fase',
-                    content: 'Enjoy even faster response speeds when using FlutterBoot',
-                  ),
-                  // Column(
-                  //   children: [
-                  //     const Text('Auto-renews for \$25/month until canceled'),
-                  //     const Text('버튼영역')
-                  //   ],
-                  // )
-                ]
+                )
+              ]
             )
           )
       ),
