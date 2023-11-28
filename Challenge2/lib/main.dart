@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,12 +31,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  double _progressValue = 0.0;
+  // bool _isRunning = false;
+  // double _progressValue = 0.0;
+  // late Timer _timer;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
-      _progressValue += 0.1;
+      // _progressValue += 0.1;
     });
   }
 
@@ -67,18 +70,18 @@ class _MyHomePageState extends State<MyHomePage> {
               alignment: Alignment.centerRight,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
-                child: Container(
-                  width: 50,
+                child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.5,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20)
-                    ),
-                    color: Colors.black,
-
-                  ),
-                ),
+                  width: 50,
+                  child: RotatedBox(
+                    quarterTurns: -1,
+                    child: LinearProgressIndicator(
+                      value: 0,
+                      valueColor: const AlwaysStoppedAnimation(Colors.deepPurple),
+                      backgroundColor: Colors.black12,
+                    )
+                  )
+                )
               ),
             ),
             const SizedBox(height: 10),
@@ -86,17 +89,13 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.fromLTRB(0, 0, 15, 15),
               child: Align(
                 alignment: Alignment.centerRight,
-                child: Column(
-                  children: [
-                    FloatingActionButton(
-                      onPressed: _incrementCounter,
-                      tooltip: 'Increment',
-                      child: const Icon(Icons.add),
-                    )
-                  ],
+                child: FloatingActionButton(
+                  onPressed: _incrementCounter,
+                  tooltip: 'Increment',
+                  child: const Icon(Icons.add),
                 )
               )
-            ),
+            )
           ],
         ),
       ),
