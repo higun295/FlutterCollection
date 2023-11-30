@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late FocusNode wholeFocusNode;
+
+  @override
+  void initState() {
+    super.initState();
+    wholeFocusNode = FocusNode();
+  }
+  @override
+  void dispose(){
+    wholeFocusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +56,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(
+            Focus(
+              onKey: (fn, event) {
+                if(event.logicalKey == LogicalKeyboardKey.enter) {
+                  wholeFocusNode.nextFocus();
+                  return KeyEventResult.handled;
+                }
+                return KeyEventResult.ignored;
+              },
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.45,
                 child: const TextField(
@@ -55,18 +76,27 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.05,
             ),
-            GestureDetector(
+            Focus(
+              focusNode: wholeFocusNode,
+              onKey: (fn, event) {
+                if(event.logicalKey == LogicalKeyboardKey.enter) {
+                  wholeFocusNode.nextFocus();
+                  return KeyEventResult.handled;
+                }
+                return KeyEventResult.ignored;
+              },
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.45,
                 child: const TextField(
+                  autofocus: true,
                   decoration: InputDecoration(
                     border: UnderlineInputBorder(),
                   ),
                 )
-              )
+              ),
             )
           ],
-        ),
+        )
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
