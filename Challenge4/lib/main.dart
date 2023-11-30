@@ -32,16 +32,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late FocusNode wholeFocusNode;
+  late FocusNode leftFocusNode;
+  late FocusNode rightFocusNode;
 
   @override
   void initState() {
     super.initState();
-    wholeFocusNode = FocusNode();
+    leftFocusNode = FocusNode();
+    rightFocusNode = FocusNode();
   }
   @override
   void dispose(){
-    wholeFocusNode.dispose();
+    rightFocusNode.dispose();
+    leftFocusNode.dispose();
     super.dispose();
   }
 
@@ -57,9 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Focus(
+              focusNode: leftFocusNode,
               onKey: (fn, event) {
                 if(event.logicalKey == LogicalKeyboardKey.enter) {
-                  wholeFocusNode.nextFocus();
+                  FocusScope.of(context).requestFocus(leftFocusNode);
                   return KeyEventResult.handled;
                 }
                 return KeyEventResult.ignored;
@@ -77,10 +81,10 @@ class _MyHomePageState extends State<MyHomePage> {
               width: MediaQuery.of(context).size.width * 0.05,
             ),
             Focus(
-              focusNode: wholeFocusNode,
+              focusNode: rightFocusNode,
               onKey: (fn, event) {
                 if(event.logicalKey == LogicalKeyboardKey.enter) {
-                  wholeFocusNode.nextFocus();
+                  FocusScope.of(context).requestFocus(rightFocusNode);
                   return KeyEventResult.handled;
                 }
                 return KeyEventResult.ignored;
