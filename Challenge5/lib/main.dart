@@ -29,25 +29,36 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _ListViewItem extends StatelessWidget {
-  const _ListViewItem({super.key});
+  const _ListViewItem({super.key, required this.content});
+
+  final String content;
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      
+    return Container(
+      margin: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(5)),
+        border: Border.all(
+          width: 1,
+          color: Colors.black.withOpacity(0.5)
+        )
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          children: [
+            const Icon(Icons.dangerous),
+            Text(content)
+          ],
+        ),
+      )
     );
   }
 }
 
-
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,80 +66,54 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: ListView(
-          padding: EdgeInsets.all(20),
-          children: <Widget>[
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-            Container(
-              height: 50,
-              child: Text('NGC162 was discovered in 1862'),
-            ),
-          ],
-        ),
+      body: ListView(
+        children: const <Widget>[
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+          _ListViewItem(content: 'NGC162 was discovered in 1862'),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
@@ -136,5 +121,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.navigation),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
   }
 }
