@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         useMaterial3: true
       ),
       home: const MyHomePage(title: 'My First ListView!'),
@@ -28,6 +27,18 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+
+class _ListViewItem extends StatelessWidget {
+  const _ListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      
+    );
+  }
+}
+
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -45,15 +56,76 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          padding: EdgeInsets.all(20),
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
+            ),
+            Container(
+              height: 50,
+              child: Text('NGC162 was discovered in 1862'),
             ),
           ],
         ),
