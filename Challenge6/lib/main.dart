@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,9 +31,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void setPoint() {
-    setState(() {
 
+  int screenPoint = 0;
+
+  void setPoint(int point) {
+    setState(() {
+      screenPoint = point;
+      Navigator.pop(context);
     });
   }
 
@@ -70,7 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           actions: <Widget> [
-            TextButton(onPressed: null,
+            TextButton(
+              onPressed: () => setPoint(randomNumber1),
               child: Text(
                 randomNumber1.toString(),
                 style: const TextStyle(
@@ -79,23 +83,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               )
             ),
-            TextButton(onPressed: null,
-                child: Text(
-                  randomNumber2.toString(),
-                  style: const TextStyle(
-                      color: Color(0xff855ec9),
-                      fontSize: 16
-                  ),
-                )
+            TextButton(
+              onPressed: () => setPoint(randomNumber2),
+              child: Text(
+                randomNumber2.toString(),
+                style: const TextStyle(
+                    color: Color(0xff855ec9),
+                    fontSize: 16
+                ),
+              )
             ),
-            TextButton(onPressed: null,
-                child: Text(
-                  randomNumber3.toString(),
-                  style: const TextStyle(
-                      color: Color(0xff855ec9),
-                      fontSize: 16
-                  ),
-                )
+            TextButton(
+              onPressed: () => setPoint(randomNumber3),
+              child: Text(
+                randomNumber3.toString(),
+                style: const TextStyle(
+                    color: Color(0xff855ec9),
+                    fontSize: 16
+                ),
+              )
             ),
           ],
         );
@@ -111,9 +117,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Your point : 14',
-              style: TextStyle(
+            Text(
+              'Your point : $screenPoint',
+              style: const TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.w700
               ),
