@@ -62,6 +62,35 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          actions: const <Widget> [
+            TextButton(onPressed: null,
+              child: Text(
+                '28',
+                style: TextStyle(
+                  color: Color(0xff855ec9),
+                  fontSize: 16
+                ),
+              )
+            ),
+            TextButton(onPressed: null,
+                child: Text(
+                  '47',
+                  style: TextStyle(
+                      color: Color(0xff855ec9),
+                      fontSize: 16
+                  ),
+                )
+            ),
+            TextButton(onPressed: null,
+                child: Text(
+                  '78',
+                  style: TextStyle(
+                      color: Color(0xff855ec9),
+                      fontSize: 16
+                  ),
+                )
+            ),
+          ],
         );
       }
     );
