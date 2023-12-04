@@ -88,8 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(
                 randomNumber2.toString(),
                 style: const TextStyle(
-                    color: Color(0xff855ec9),
-                    fontSize: 16
+                  color: Color(0xff855ec9),
+                  fontSize: 16
                 ),
               )
             ),
@@ -98,8 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(
                 randomNumber3.toString(),
                 style: const TextStyle(
-                    color: Color(0xff855ec9),
-                    fontSize: 16
+                  color: Color(0xff855ec9),
+                  fontSize: 16
                 ),
               )
             ),
