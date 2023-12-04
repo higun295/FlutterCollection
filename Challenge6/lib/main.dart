@@ -38,16 +38,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void flutterDialog() {
     showDialog(
-        context: context,
-        barrierDismissible: true,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0)
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0)
+          ),
+          title: Text(
+            'Choose your next point!',
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.black.withOpacity(0.8)
             ),
-
-          );
-        }
+          ),
+          content: Flexible(
+            child: Text(
+              'Choose one of the points below!\n'
+              'If you don\'t make a selection, your current score will be retained.',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black.withOpacity(0.6)
+              ),
+            ),
+          ),
+        );
+      }
     );
   }
 
