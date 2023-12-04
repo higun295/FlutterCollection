@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -37,11 +39,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void flutterDialog() {
+    int randomNumber1 = Random().nextInt(100);
+    int randomNumber2 = Random().nextInt(100);
+    int randomNumber3 = Random().nextInt(100);
+
     showDialog(
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor: const Color(0xfff7f1fb),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0)
           ),
@@ -62,11 +69,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          actions: const <Widget> [
+          actions: <Widget> [
             TextButton(onPressed: null,
               child: Text(
-                '28',
-                style: TextStyle(
+                randomNumber1.toString(),
+                style: const TextStyle(
                   color: Color(0xff855ec9),
                   fontSize: 16
                 ),
@@ -74,8 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(onPressed: null,
                 child: Text(
-                  '47',
-                  style: TextStyle(
+                  randomNumber2.toString(),
+                  style: const TextStyle(
                       color: Color(0xff855ec9),
                       fontSize: 16
                   ),
@@ -83,8 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(onPressed: null,
                 child: Text(
-                  '78',
-                  style: TextStyle(
+                  randomNumber3.toString(),
+                  style: const TextStyle(
                       color: Color(0xff855ec9),
                       fontSize: 16
                   ),
