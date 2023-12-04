@@ -36,6 +36,21 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void flutterDialog() {
+    showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0)
+            ),
+
+          );
+        }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: OutlinedButton.styleFrom(
                   backgroundColor: const Color(0xfff7f1fb)
                 ),
-                onPressed: setPoint,
+                onPressed: flutterDialog,
                 child: const Text(
                   'I want more points!',
                   style: TextStyle(
