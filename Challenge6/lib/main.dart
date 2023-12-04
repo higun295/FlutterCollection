@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Your point : ',
+              'Your point : 14',
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.w700
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: OutlinedButton.styleFrom(
                   backgroundColor: const Color(0xfff7f1fb)
                 ),
-                onPressed: null,
+                onPressed: setPoint,
                 child: const Text(
                   'I want more points!',
                   style: TextStyle(
