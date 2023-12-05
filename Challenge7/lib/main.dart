@@ -125,68 +125,6 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const SizedBox(height: 5),
-            // SizedBox(
-            //   width: MediaQuery.of(context).size.width * 0.85,
-            //   child: OutlinedButton(
-            //     style: OutlinedButton.styleFrom(
-            //       backgroundColor: const Color(0xfff7f1fb),
-            //       side: const BorderSide(color: Color(0xFF000000), width: 0.1)
-            //     ),
-            //     onPressed: () {
-            //       _showOverlay(context);
-            //     },
-            //     child: Text(
-            //       'Press',
-            //       style: TextStyle(
-            //         color: const Color(0xff6f43c0).withOpacity(0.9),
-            //         fontSize: 15,
-            //         fontWeight: FontWeight.w600
-            //       ),
-            //     )
-            //   ),
-            // ),
-            // const SizedBox(height: 5),
-            // SizedBox(
-            //   width: MediaQuery.of(context).size.width * 0.85,
-            //   child: OutlinedButton(
-            //     style: OutlinedButton.styleFrom(
-            //       backgroundColor: const Color(0xfff7f1fb),
-            //       side: const BorderSide(color: Color(0xFF000000), width: 0.1)
-            //     ),
-            //     onPressed: () {
-            //       _showOverlay(context);
-            //     },
-            //     child: Text(
-            //       'any',
-            //       style: TextStyle(
-            //         color: const Color(0xff6f43c0).withOpacity(0.9),
-            //         fontSize: 15,
-            //         fontWeight: FontWeight.w600
-            //       ),
-            //     )
-            //   ),
-            // ),
-            // const SizedBox(height: 5),
-            // SizedBox(
-            //   width: MediaQuery.of(context).size.width * 0.85,
-            //   child: OutlinedButton(
-            //     style: OutlinedButton.styleFrom(
-            //       backgroundColor: const Color(0xfff7f1fb),
-            //       side: const BorderSide(color: Color(0xFF000000), width: 0.1)
-            //     ),
-            //     onPressed: () {
-            //       _showOverlay(context);
-            //     },
-            //     child: Text(
-            //       'button!',
-            //       style: TextStyle(
-            //         color: const Color(0xff6f43c0).withOpacity(0.9),
-            //         fontSize: 15,
-            //         fontWeight: FontWeight.w600
-            //       ),
-            //     )
-            //   ),
-            // ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.85,
               child: OutlinedButton(
@@ -194,9 +132,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: const Color(0xfff7f1fb),
                   side: const BorderSide(color: Color(0xFF000000), width: 0.1)
                 ),
-                onPressed: _removeOverlay,
+                onPressed: () {
+                  _showOverlay(context);
+                },
                 child: Text(
-                  'remove overlay',
+                  'Press',
                   style: TextStyle(
                     color: const Color(0xff6f43c0).withOpacity(0.9),
                     fontSize: 15,
@@ -204,7 +144,67 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 )
               ),
-            )
+            ),
+            const SizedBox(height: 5),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.85,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: const Color(0xfff7f1fb),
+                  side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+                ),
+                onPressed: () {
+                  _showOverlay(context);
+                },
+                child: Text(
+                  'any',
+                  style: TextStyle(
+                    color: const Color(0xff6f43c0).withOpacity(0.9),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ),
+            ),
+            const SizedBox(height: 5),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.85,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: const Color(0xfff7f1fb),
+                  side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+                ),
+                onPressed: () {
+                  _showOverlay(context);
+                },
+                child: Text(
+                  'button!',
+                  style: TextStyle(
+                    color: const Color(0xff6f43c0).withOpacity(0.9),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ),
+            ),
+            // SizedBox(
+            //   width: MediaQuery.of(context).size.width * 0.85,
+            //   child: OutlinedButton(
+            //     style: OutlinedButton.styleFrom(
+            //       backgroundColor: const Color(0xfff7f1fb),
+            //       side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+            //     ),
+            //     onPressed: _removeOverlay,
+            //     child: Text(
+            //       'remove overlay',
+            //       style: TextStyle(
+            //         color: const Color(0xff6f43c0).withOpacity(0.9),
+            //         fontSize: 15,
+            //         fontWeight: FontWeight.w600
+            //       ),
+            //     )
+            //   ),
+            // )
           ],
         ),
       ),
