@@ -51,15 +51,22 @@ class CustomOverlay extends StatelessWidget {
   }
 }
 
+GlobalKey key = GlobalKey();
 
 class _MyHomePageState extends State<MyHomePage> {
   OverlayEntry? overlayEntry;
+  RenderBox box = key.currentContext?.findRenderObject() as RenderBox;
+  Offset position = box?.localToGlobal(Offset.zero);
 
-  void _showOverlay() {
+
+  void _showOverlay(BuildContext context) async {
+    OverlayState? overlayState = Overlay.of(context);
     overlayEntry = OverlayEntry(
-      builder: (context) => const Positioned(
+      builder: (context) => Positioned(
+        left: MediaQuery.of(context).size.width * 0.1,
+        top: MediaQuery.of(context).size.height * 0.80,
         width: 250,
-        child: CustomOverlay()
+        child: const CustomOverlay()
       )
     );
 
@@ -97,13 +104,16 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const SizedBox(height: 30),
             SizedBox(
+              key: key,
               width: MediaQuery.of(context).size.width * 0.85,
               child: OutlinedButton(
                 style: OutlinedButton.styleFrom(
                   backgroundColor: const Color(0xfff7f1fb),
                   side: const BorderSide(color: Color(0xFF000000), width: 0.1)
                 ),
-                onPressed: _showOverlay,
+                onPressed: () {
+                  _showOverlay(context);
+                },
                 child: Text(
                   'Hello!',
                   style: TextStyle(
@@ -115,6 +125,68 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const SizedBox(height: 5),
+            // SizedBox(
+            //   width: MediaQuery.of(context).size.width * 0.85,
+            //   child: OutlinedButton(
+            //     style: OutlinedButton.styleFrom(
+            //       backgroundColor: const Color(0xfff7f1fb),
+            //       side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+            //     ),
+            //     onPressed: () {
+            //       _showOverlay(context);
+            //     },
+            //     child: Text(
+            //       'Press',
+            //       style: TextStyle(
+            //         color: const Color(0xff6f43c0).withOpacity(0.9),
+            //         fontSize: 15,
+            //         fontWeight: FontWeight.w600
+            //       ),
+            //     )
+            //   ),
+            // ),
+            // const SizedBox(height: 5),
+            // SizedBox(
+            //   width: MediaQuery.of(context).size.width * 0.85,
+            //   child: OutlinedButton(
+            //     style: OutlinedButton.styleFrom(
+            //       backgroundColor: const Color(0xfff7f1fb),
+            //       side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+            //     ),
+            //     onPressed: () {
+            //       _showOverlay(context);
+            //     },
+            //     child: Text(
+            //       'any',
+            //       style: TextStyle(
+            //         color: const Color(0xff6f43c0).withOpacity(0.9),
+            //         fontSize: 15,
+            //         fontWeight: FontWeight.w600
+            //       ),
+            //     )
+            //   ),
+            // ),
+            // const SizedBox(height: 5),
+            // SizedBox(
+            //   width: MediaQuery.of(context).size.width * 0.85,
+            //   child: OutlinedButton(
+            //     style: OutlinedButton.styleFrom(
+            //       backgroundColor: const Color(0xfff7f1fb),
+            //       side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+            //     ),
+            //     onPressed: () {
+            //       _showOverlay(context);
+            //     },
+            //     child: Text(
+            //       'button!',
+            //       style: TextStyle(
+            //         color: const Color(0xff6f43c0).withOpacity(0.9),
+            //         fontSize: 15,
+            //         fontWeight: FontWeight.w600
+            //       ),
+            //     )
+            //   ),
+            // ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.85,
               child: OutlinedButton(
@@ -122,71 +194,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: const Color(0xfff7f1fb),
                   side: const BorderSide(color: Color(0xFF000000), width: 0.1)
                 ),
-                onPressed: _showOverlay,
+                onPressed: _removeOverlay,
                 child: Text(
-                  'Press',
+                  'remove overlay',
                   style: TextStyle(
                     color: const Color(0xff6f43c0).withOpacity(0.9),
                     fontSize: 15,
                     fontWeight: FontWeight.w600
                   ),
                 )
-              ),
-            ),
-            const SizedBox(height: 5),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.85,
-              child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  backgroundColor: const Color(0xfff7f1fb),
-                  side: const BorderSide(color: Color(0xFF000000), width: 0.1)
-                ),
-                onPressed: _showOverlay,
-                child: Text(
-                  'any',
-                  style: TextStyle(
-                    color: const Color(0xff6f43c0).withOpacity(0.9),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600
-                  ),
-                )
-              ),
-            ),
-            const SizedBox(height: 5),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.85,
-              child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  backgroundColor: const Color(0xfff7f1fb),
-                  side: const BorderSide(color: Color(0xFF000000), width: 0.1)
-                ),
-                onPressed: _showOverlay,
-                child: Text(
-                  'button!',
-                  style: TextStyle(
-                    color: const Color(0xff6f43c0).withOpacity(0.9),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600
-                  ),
-                )
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.85,
-              child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                      backgroundColor: const Color(0xfff7f1fb),
-                      side: const BorderSide(color: Color(0xFF000000), width: 0.1)
-                  ),
-                  onPressed: _removeOverlay,
-                  child: Text(
-                    'remove overlay',
-                    style: TextStyle(
-                        color: const Color(0xff6f43c0).withOpacity(0.9),
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600
-                    ),
-                  )
               ),
             )
           ],
