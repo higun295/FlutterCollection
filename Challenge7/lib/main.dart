@@ -30,13 +30,52 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class CustomOverlay extends StatelessWidget {
+  const CustomOverlay({super.key});
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5.0),
+        color: const Color(0xff9e9e9e),
+      ),
+      child: const Text(
+        '  \u{2B07} You clicked this \u{1F60E}  ',
+        style: TextStyle(
+            fontSize: 19,
+            fontWeight: FontWeight.w400
+        )
+      )
+    );
+  }
+}
+
+
+class _MyHomePageState extends State<MyHomePage> {
+  OverlayEntry? overlayEntry;
+
+  void _showOverlay() {
+    overlayEntry = OverlayEntry(
+      builder: (context) => const Positioned(
+        width: 250,
+        child: CustomOverlay()
+      )
+    );
+
+    Overlay.of(context).insert(overlayEntry!);
+  }
+
+  void _removeOverlay() {
+    overlayEntry?.remove();
+    overlayEntry?.dispose();
+    overlayEntry = null;
+  }
+
+  @override
+  void dispose() {
+    _removeOverlay();
+    super.dispose();
   }
 
   @override
@@ -56,26 +95,100 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.85,
-              child: OutlinedButton(onPressed: null, child: Text('Hello!')),
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: const Color(0xfff7f1fb),
+                  side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+                ),
+                onPressed: _showOverlay,
+                child: Text(
+                  'Hello!',
+                  style: TextStyle(
+                    color: const Color(0xff6f43c0).withOpacity(0.9),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.85,
-              child: OutlinedButton(onPressed: null, child: Text('Hello!')),
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: const Color(0xfff7f1fb),
+                  side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+                ),
+                onPressed: _showOverlay,
+                child: Text(
+                  'Press',
+                  style: TextStyle(
+                    color: const Color(0xff6f43c0).withOpacity(0.9),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.85,
-              child: OutlinedButton(onPressed: null, child: Text('Hello!')),
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: const Color(0xfff7f1fb),
+                  side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+                ),
+                onPressed: _showOverlay,
+                child: Text(
+                  'any',
+                  style: TextStyle(
+                    color: const Color(0xff6f43c0).withOpacity(0.9),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.85,
-              child: OutlinedButton(onPressed: null, child: Text('Hello!')),
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: const Color(0xfff7f1fb),
+                  side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+                ),
+                onPressed: _showOverlay,
+                child: Text(
+                  'button!',
+                  style: TextStyle(
+                    color: const Color(0xff6f43c0).withOpacity(0.9),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ),
             ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.85,
+              child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      backgroundColor: const Color(0xfff7f1fb),
+                      side: const BorderSide(color: Color(0xFF000000), width: 0.1)
+                  ),
+                  onPressed: _removeOverlay,
+                  child: Text(
+                    'remove overlay',
+                    style: TextStyle(
+                        color: const Color(0xff6f43c0).withOpacity(0.9),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600
+                    ),
+                  )
+              ),
+            )
           ],
         ),
       ),
