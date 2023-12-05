@@ -37,7 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
   void setPoint(int point) {
     setState(() {
       screenPoint = point;
-      Navigator.pop(context);
+      if(context.mounted) {
+        Navigator.of(context).pop();
+      }
     });
   }
 
